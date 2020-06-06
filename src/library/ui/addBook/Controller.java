@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    BookDB bdb;
+    BookDB bdb =new BookDB();
     @FXML
     private JFXTextField author;
 
@@ -69,6 +69,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        BookDB bdb = new BookDB();
     }
 }
 
