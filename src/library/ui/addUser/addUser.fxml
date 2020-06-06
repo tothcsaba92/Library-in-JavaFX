@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="418.0" prefWidth="453.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.ui.addUser.AddUserController">
+   <children>
+      <VBox prefHeight="564.0" prefWidth="566.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="userName" labelFloat="true" promptText="Felhasználó név">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="address" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="Cím">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="email" labelFloat="true" layoutX="10.0" layoutY="55.0" promptText="E-mail">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="phoneNumber" labelFloat="true" layoutX="10.0" layoutY="80.0" promptText="Telefonszám">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="identityCard" labelFloat="true" layoutX="20.0" layoutY="120.0" promptText="személyi igazolvány szám">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="birthDate" labelFloat="true" layoutX="20.0" layoutY="165.0" promptText="Születési dátum">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="20.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <HBox prefHeight="75.0" prefWidth="453.0">
+               <children>
+                  <JFXButton fx:id="addButton" onAction="#addUser" prefHeight="82.0" prefWidth="227.0" stylesheets="@addUser.css" text="Hozzáadás" />
+                  <JFXButton fx:id="backButton" layoutX="10.0" layoutY="10.0" onAction="#backToMain" prefHeight="80.0" prefWidth="244.0" stylesheets="@addUser.css" text="Visszalépés" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

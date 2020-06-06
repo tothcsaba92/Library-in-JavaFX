@@ -27,16 +27,16 @@ public class BookDB {
     }
 
     public void insertNewUserToDatabase(String userName, String userAddress, String userEmail, long userPhone,
-                                        String userId, String userDate) {
+                                        String identityCardNumber, String userDate) {
         try {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO `library`.`user` (`name`, `addres`, `e-mail`, `phone_number`," +
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO `library`.`user` (`name`, `address`, `e-mail`, `phone_number`," +
                     " `Identity_card`, `birth_date`) VALUES " + "(?, ?, ?, ?, ?, ?);");
 
             ps.setString(1, userName);
             ps.setString(2, userAddress);
             ps.setString(3, userEmail);
             ps.setLong(4, userPhone);
-            ps.setString(5, userId);
+            ps.setString(5, identityCardNumber);
             ps.setString(6, userDate);
 
             int i = ps.executeUpdate();
