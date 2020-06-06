@@ -6,13 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 import library.database.BookDB;
 
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class AddNewBookController implements Initializable {
     BookDB bdb =new BookDB();
     @FXML
     private JFXTextField author;
@@ -30,9 +33,6 @@ public class Controller implements Initializable {
     private JFXTextField isbn;
 
     @FXML
-    private JFXTextField genre;
-
-    @FXML
     private JFXTextField quantity;
 
     @FXML
@@ -42,7 +42,15 @@ public class Controller implements Initializable {
     private JFXButton cancelButton;
 
     @FXML
+    private StackPane rootPane;
+
+    @FXML
+    private AnchorPane mainContainer;
+
+    @FXML
     void cancel(ActionEvent event) {
+        Stage stage = (Stage) rootPane.getScene().getWindow();
+        stage.close();
 
     }
 

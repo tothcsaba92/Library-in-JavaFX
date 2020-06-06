@@ -51,10 +51,9 @@ public class BookDB {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT \n" +
                     "    user.name,\n" +
-                    "    book.title,\n" +
+                    "    book.title, book.author,\n" +
                     "    book_copy.ISBN,\n" +
-                    "    book_copy.publication_year,\n" +
-                    "    book_copy.is_book_cover_hard\n" +
+                    "    book_copy.publication_year,book_copy.id AS bookID\n" +
                     "FROM\n" +
                     "    user\n" +
                     "        JOIN\n" +
@@ -79,7 +78,7 @@ public class BookDB {
                     "FROM user\n" +
                     "JOIN book_rent ON user.id = book_rent.user_id\n" +
                     "JOIN book_copy ON book_rent.book_copy_id = book_copy.id\n" +
-                    "JOIN book ON book_copy.book_id = book.id\n" +
+                    "JOIN book ON book_copy.book_id = book.id \n" +
                     "WHERE user.name = ?");
 
             ps.setString(1, userName);
@@ -100,7 +99,9 @@ public class BookDB {
                 bi.setUserName(rs.getString("name"));
                 bi.setBookTitle(rs.getString("title"));
                 bi.setBookISBN(rs.getString("ISBN"));
+                bi.setBookAuthor(rs.getString("author"));
                 bi.setPublishYear(rs.getInt("publication_year"));
+                bi.setCopyId(rs.getString("bookID"));
                 bookInfoList.add(bi);
             }
         } else {

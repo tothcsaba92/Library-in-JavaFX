@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="rootPane" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.ui.rentBook.RentBookController">
+   <children>
+      <AnchorPane id="AnchorPane" fx:id="mainContainer" prefHeight="376.0" prefWidth="490.0" styleClass="custom-pane" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css">
+         <children>
+            <VBox prefHeight="153.0" prefWidth="404.0" spacing="10.0" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXTextField fx:id="userID" labelFloat="true" promptText="Regisztrációs szám" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="title" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="Könyv cime" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <JFXTextField fx:id="author" labelFloat="true" layoutX="20.0" layoutY="30.0" promptText="Könyv szerzője" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                  </JFXTextField>
+                  <HBox alignment="CENTER" prefHeight="47.0" prefWidth="404.0" spacing="30.0" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css">
+                     <children>
+                        <JFXButton fx:id="applyButton" onAction="#rentBook" prefHeight="47.0" prefWidth="128.0" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css" text="Kölcsönzés" />
+                        <JFXButton fx:id="cancelButton" layoutX="10.0" layoutY="10.0" onAction="#cancel" prefHeight="47.0" prefWidth="133.0" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css" text="Visszavonás" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <JFXTextArea fx:id="alert" focusColor="#5e6d948a" prefHeight="31.0" prefWidth="445.0" promptText="A keresett könyv jeleneg nem elérhető!" stylesheets="@../../../../../Library-Assistant/src/resources/dark-theme.css" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
